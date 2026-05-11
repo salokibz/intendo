@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Itendo Foundation — Empowering Communities</title>
+  <meta name="description" content="Itendo Foundation — fashion, impact, and travel in Uganda. Empowering communities through dignity, education, and culture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="itendo_logo-removebg-preview.png" />
+</head>
+<body>
+
+  <!-- Decorative paper texture overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Sticky top marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>EMPOWERING COMMUNITIES</span><span class="dot">●</span>
+      <span>DIGNITY · EDUCATION · CULTURE</span><span class="dot">●</span>
+      <span>MADE IN UGANDA</span><span class="dot">●</span>
+      <span>FASHION WITH PURPOSE</span><span class="dot">●</span>
+      <span>EMPOWERING COMMUNITIES</span><span class="dot">●</span>
+      <span>DIGNITY · EDUCATION · CULTURE</span><span class="dot">●</span>
+      <span>MADE IN UGANDA</span><span class="dot">●</span>
+      <span>FASHION WITH PURPOSE</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <div class="page-shell">
+
+    <header class="logo-banner">
+      <a href="#top" class="logo-link" aria-label="Itendo Foundation home">
+        <img src="itendo_logo-removebg-preview.png" alt="Itendo Foundation" class="logo logo-standalone" />
+      </a>
+      <div class="logo-meta">
+        <span class="logo-meta-dot" aria-hidden="true"></span>
+        <div class="logo-meta-text">
+          <small>Est. Uganda</small>
+          <strong>Empowering Communities</strong>
+        </div>
+      </div>
+
+      <!-- Mobile-only refined sub-strip — appears beneath the logo on small screens -->
+      <div class="logo-substrip" aria-hidden="true">
+        <span class="ls-line"></span>
+        <span class="ls-text">Empowering Communities <span class="ls-dot">·</span> Uganda</span>
+        <span class="ls-line"></span>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <main class="hero">
+
+      <!-- decorative SVG blob -->
+      <svg class="blob blob-a" viewBox="0 0 600 600" aria-hidden="true">
+        <path d="M421.6,330.5c-25.8,57.7-85.5,98-148.4,108.6c-62.9,10.6-129-8.5-167.5-52.7c-38.5-44.2-49.4-113.6-21.8-167.8c27.6-54.2,93.7-93.2,160.1-95.3c66.4-2.1,133,32.6,167.6,84.6C446.2,260,447.4,272.8,421.6,330.5z" fill="#F18213"/>
+      </svg>
+      <svg class="blob blob-b" viewBox="0 0 600 600" aria-hidden="true">
+        <path d="M468.5,294.4c-9.8,72.3-71.5,134.1-141.5,153.3c-70,19.2-148.4-4.2-188.2-58.4c-39.8-54.2-41-139.2-3.4-198.6c37.6-59.4,113.8-93.2,184.6-83.4C390.8,117.1,478.3,222.1,468.5,294.4z" fill="#2E8B1F"/>
+      </svg>
+
+      <div class="hero-inner">
+        <p class="eyebrow"><span class="dash"></span> Itendo Foundation — Empowering Communities</p>
+
+        <h1 class="display">
+          From <em class="ink-circle">fashion</em><br/>
+          to <span class="hand-accent">impact.</span><br/>
+          From creativity<br/>
+          to <span class="underline-wave">community</span>.
+        </h1>
+
+        <div class="hero-meta">
+          <p class="lede">
+            We design garments, fund girls' education, build reusable
+            dignity kits, and share Uganda through culture and travel —
+            because real impact looks like real people.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Get in touch →</a>
+            <a href="#about" class="btn btn-ghost">Our mission</a>
+          </div>
+        </div>
+
+        <!-- impact strip -->
+        <div class="strip">
+          <div class="strip-item">
+            <strong data-count="500" data-suffix="+" data-delay="900">500+</strong>
+            <small>Girls supported with dignity kits</small>
+          </div>
+          <div class="strip-divider"></div>
+          <div class="strip-item">
+            <strong data-count="3" data-delay="900">3</strong>
+            <small>Districts of active outreach</small>
+          </div>
+          <div class="strip-divider"></div>
+          <div class="strip-item">
+            <strong data-count="100" data-suffix="%" data-delay="900">100%</strong>
+            <small>Locally made garments</small>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============ PILLARS ============ -->
+    <section class="pillars" id="about">
+      <div class="section-head reveal">
+        <span class="caveat">— what we do</span>
+        <h2 class="display-2">Three pillars,<br/>one mission.</h2>
+      </div>
+
+      <div class="pillar-grid">
+
+        <article class="pillar pillar-1 reveal" id="impact">
+          <div class="pillar-tag">01 / Impact</div>
+          <h3>Itendo<br/><em>(Impact)</em></h3>
+          <p>We design reusable menstrual kits and lead community outreach where girls and families need it most — keeping young women in school and in dignity.</p>
+          <div class="pillar-foot">
+            <span class="circle-bullet"></span>
+            <span>Outreach · Dignity · Education</span>
+          </div>
+        </article>
+
+        <article class="pillar pillar-2 reveal" id="fashion">
+          <div class="pillar-tag">02 / Fashion</div>
+          <h3>Made for<br/><em>change.</em></h3>
+          <p>Every garment we create is hand-cut, ethically made, and tied to a cause. Wear it — and you've put a girl back in a classroom.</p>
+          <div class="pillar-foot">
+            <span class="circle-bullet"></span>
+            <span>Garments · Studio · Funding</span>
+          </div>
+        </article>
+
+        <article class="pillar pillar-3 reveal" id="trips">
+          <div class="pillar-tag">03 / Travel</div>
+          <h3>Experience<br/><em>Uganda.</em></h3>
+          <p>Responsible trips that connect visitors with local makers, culture, and creativity. Every booking funds the foundation's outreach.</p>
+          <div class="pillar-foot">
+            <span class="circle-bullet"></span>
+            <span>Culture · Community · Craft</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ WHERE WE WORK / MAP ============ -->
+    <section class="reach" id="reach">
+      <div class="reach-copy reveal-left">
+        <span class="caveat">— where we work</span>
+        <h2 class="display-2">Three districts.<br/>Real <em>roots.</em></h2>
+        <p class="reach-lede">
+          Itendo Foundation is based in Uganda, with active outreach across
+          three districts and a growing network of schools, makers, and community partners.
+        </p>
+        <ul class="reach-list">
+          <li>
+            <span class="reach-dot reach-dot--orange" aria-hidden="true"></span>
+            <span><strong>Kampala</strong> &middot; <em>HQ & studio</em></span>
+          </li>
+          <li>
+            <span class="reach-dot reach-dot--green" aria-hidden="true"></span>
+            <span><strong>Kasese</strong> &middot; <em>Outreach base, west</em></span>
+          </li>
+          <li>
+            <span class="reach-dot reach-dot--yellow" aria-hidden="true"></span>
+            <span><strong>Gulu</strong> &middot; <em>Partner schools, north</em></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reach-map-wrap reveal-right">
+        <div class="reach-map" id="ugandaMap" role="application"
+             aria-label="Interactive map of Uganda showing three outreach districts"></div>
+        <p class="map-caption">Uganda &middot; East Africa &middot; <em>click a pin</em></p>
+      </div>
+    </section>
+
+    <!-- ============ COUNTDOWN STRIP ============ -->
+    <section class="launch-band reveal-scale">
+      <div class="launch-band-inner">
+        <div class="launch-copy">
+          <span class="caveat caveat-on-dark">— soon</span>
+          <h2 class="display-3">The full site<br/>launches in</h2>
+        </div>
+        <div class="countdown-grid" id="countdown">
+          <div class="countdown-item"><span class="count" id="days">14</span><small>days</small></div>
+          <div class="countdown-item"><span class="count" id="hours">00</span><small>hrs</small></div>
+          <div class="countdown-item"><span class="count" id="minutes">00</span><small>min</small></div>
+          <div class="countdown-item"><span class="count" id="seconds">00</span><small>sec</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact-section" id="contact">
+
+      <div class="contact-copy reveal-left">
+        <span class="caveat">— stay close</span>
+        <h2 class="display-2">Let's build<br/>something <em>real.</em></h2>
+        <p class="contact-lede">
+          We're putting the new site together right now. Drop us a line —
+          to invest, to partner, to host a trip, to wear the work.
+        </p>
+
+        <ul class="contact-bullets">
+          <li>
+            <span class="bullet-icon">✉</span>
+            <a href="mailto:info@itendofoundation.org">info@itendofoundation.org</a>
+          </li>
+          <li>
+            <span class="bullet-icon">☎</span>
+            <a href="tel:+256774630904">+256 774 630 904</a>
+          </li>
+          <li>
+            <span class="bullet-icon">◎</span>
+            <span>Based in Uganda · Available worldwide</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal-right" action="mailto:info@itendofoundation.org" method="post" enctype="text/plain">
+        <div class="form-card">
+          <p class="form-eyebrow">Say hello</p>
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" placeholder="Jane Mukasa" required />
+          </label>
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>What's on your mind?</span>
+            <textarea name="message" rows="4" placeholder="Tell us how you'd like to support — partnership, press, or just hello." required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">Send Message →</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <img src="itendo_logo-removebg-preview.png" alt="Itendo Foundation" class="footer-logo" />
+        <p class="footer-tag">Empowering communities through fashion, dignity, and culture.</p>
+      </div>
+      <div class="footer-bottom">
+        <small>© <span id="year">2026</span> Itendo Foundation. All rights reserved.</small>
+        <small>Made with care in Uganda.</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- bottom marquee -->
+  <div class="marquee marquee-bottom" aria-hidden="true">
+    <div class="marquee-track reverse">
+      <span>ITENDO FOUNDATION</span><span class="dot">●</span>
+      <span>EMPOWERING COMMUNITIES</span><span class="dot">●</span>
+      <span>DIGNITY · EDUCATION · CULTURE</span><span class="dot">●</span>
+      <span>MADE IN UGANDA</span><span class="dot">●</span>
+      <span>ITENDO FOUNDATION</span><span class="dot">●</span>
+      <span>EMPOWERING COMMUNITIES</span><span class="dot">●</span>
+      <span>DIGNITY · EDUCATION · CULTURE</span><span class="dot">●</span>
+      <span>MADE IN UGANDA</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
