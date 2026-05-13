@@ -945,6 +945,210 @@ a   { color: inherit; }
    ============================================================ */
 
 /* ============================================================
+   PROJECTS
+   ============================================================ */
+.projects {
+  padding: 80px 0 60px;
+  position: relative;
+}
+
+.projects-intro {
+  margin: 18px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 600px;
+}
+
+.project-feature {
+  margin-top: 44px;
+  position: relative;
+  background: var(--cream-deep);
+  border: 1px solid var(--paper-line);
+  border-radius: 24px;
+  padding: 44px 44px 40px;
+  box-shadow: 0 2px 4px rgba(15, 32, 26, 0.04), 0 24px 50px -18px rgba(15, 32, 26, 0.18);
+}
+
+.project-feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(61, 165, 46, 0.3);
+}
+
+.project-feature-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.project-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+
+.project-blurb {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin: 0 0 28px;
+  max-width: 540px;
+}
+
+.project-stats {
+  list-style: none;
+  padding: 22px 24px;
+  margin: 0 0 28px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  background: var(--cream);
+  border: 1px solid var(--paper-line);
+  border-radius: 14px;
+}
+.project-stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.project-stats strong {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--green-deep);
+}
+.project-stats small {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+.project-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Right-side visual frame: "Kit cycle" diagram */
+.project-visual {
+  display: flex;
+  align-items: stretch;
+}
+.visual-frame {
+  width: 100%;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 18px;
+  padding: 28px 26px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.visual-frame::before {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.4), transparent 65%);
+  top: -80px; right: -80px;
+  filter: blur(6px);
+}
+.visual-label {
+  position: relative;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--orange-soft);
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 192, 128, 0.3);
+  margin-bottom: 22px;
+}
+.visual-steps {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  gap: 12px;
+}
+.visual-steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--cream);
+}
+.visual-steps li span {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.visual-foot {
+  position: relative;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(250, 241, 216, 0.18);
+  font-size: 0.88rem;
+  color: rgba(250, 241, 216, 0.78);
+}
+.visual-foot strong { color: var(--yellow); font-weight: 700; }
+
+.project-future {
+  margin: 40px 0 0;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dashed var(--paper-line);
+  border-radius: 12px;
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+.project-future strong {
+  color: var(--ink);
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+/* ============================================================
    WHERE WE WORK / UGANDA MAP
    ============================================================ */
 .reach {
@@ -1233,6 +1437,16 @@ a   { color: inherit; }
   .reach-copy { max-width: none; }
   .reach-map { height: 420px; }
 
+  /* Projects */
+  .projects { padding: 56px 0 40px; }
+  .project-feature { padding: 32px 28px 28px; border-radius: 20px; }
+  .project-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .project-stats { padding: 18px 20px; gap: 20px; }
+  .project-stats strong { font-size: 1.7rem; }
+
   /* Decorative — keep blobs but cap their size so they don't dominate */
   .blob { width: 360px; height: 360px; }
   .blob-a { top: -80px; right: -80px; }
@@ -1350,6 +1564,21 @@ a   { color: inherit; }
   .reach-list li { padding: 10px 14px; font-size: 0.94rem; }
   .map-popup strong { font-size: 1.2rem; }
   .map-popup p { font-size: 0.82rem; }
+
+  /* Projects — mobile */
+  .projects { padding: 40px 0 24px; }
+  .project-feature { padding: 26px 22px 24px; border-radius: 18px; margin-top: 28px; }
+  .project-feature-tag { font-size: 0.66rem; padding: 6px 12px; margin-bottom: 20px; }
+  .project-title { font-size: 1.8rem; margin-bottom: 14px; }
+  .project-blurb { font-size: 0.98rem; margin-bottom: 22px; }
+  .project-stats { padding: 16px 18px; gap: 16px; flex-direction: column; align-items: flex-start; }
+  .project-stats strong { font-size: 1.6rem; }
+  .project-stats small { font-size: 0.72rem; }
+  .project-cta { flex-direction: column; }
+  .project-cta .btn { width: 100%; }
+  .visual-frame { padding: 22px 20px 20px; border-radius: 14px; }
+  .visual-steps li { font-size: 0.98rem; }
+  .project-future { padding: 16px 18px; font-size: 0.92rem; }
   .form-eyebrow { font-size: 1.5rem; }
   .contact-form input,
   .contact-form textarea { padding: 12px 14px; font-size: 0.95rem; }

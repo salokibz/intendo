@@ -130,23 +130,23 @@ setInterval(updateCountdown, 1000);
   const districts = [
     {
       name:   'Kampala',
-      role:   'HQ & Studio',
-      blurb:  'Where our garments are designed, cut, and assembled. Central Uganda.',
+      role:   'HQ & Slums Outreach',
+      blurb:  'Studio HQ where kits are designed and assembled, plus active outreach in Kampala\'s informal settlements.',
       latlng: [0.3476, 32.5825],
       color:  getCssVar('--orange', '#F58220'),
     },
     {
-      name:   'Kasese',
-      role:   'Outreach Base — West',
-      blurb:  'Foothills of the Rwenzori. Active dignity-kit distribution and school partnerships.',
-      latlng: [0.1833, 30.0833],
+      name:   'Bugiri',
+      role:   'Eastern Uganda',
+      blurb:  'Distribution and partner-school programs serving Bugiri district and surrounding communities in eastern Uganda.',
+      latlng: [0.5708, 33.7414],
       color:  getCssVar('--green', '#3DA52E'),
     },
     {
-      name:   'Gulu',
-      role:   'Partner Schools — North',
-      blurb:  'Northern outreach hub serving 18 partner schools across the region.',
-      latlng: [2.7747, 32.2989],
+      name:   'Mayuge',
+      role:   'Eastern Uganda',
+      blurb:  'Outreach and dignity-kit distribution across schools and community centres in Mayuge district.',
+      latlng: [0.4569, 33.4742],
       color:  getCssVar('--yellow', '#FFCE3A'),
     },
   ];
