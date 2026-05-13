@@ -945,6 +945,218 @@ a   { color: inherit; }
    ============================================================ */
 
 /* ============================================================
+   MISSION FEATURE CARD
+   ============================================================ */
+.mission-section {
+  padding: 64px 0 0;
+}
+.mission-card {
+  position: relative;
+  background: linear-gradient(140deg, var(--green-deep) 0%, var(--green-ink) 100%);
+  border-radius: 28px;
+  padding: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(15, 32, 26, 0.08), 0 30px 60px -22px rgba(15, 32, 26, 0.4);
+}
+.mission-card::before,
+.mission-card::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.mission-card::before {
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.45), transparent 65%);
+  top: -160px; right: -120px;
+  filter: blur(10px);
+}
+.mission-card::after {
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(255, 206, 58, 0.28), transparent 65%);
+  bottom: -110px; left: -60px;
+  filter: blur(10px);
+}
+.mission-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 56px 56px 52px;
+}
+.mission-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange-soft);
+  margin-bottom: 28px;
+}
+.mission-eyebrow .dash {
+  width: 36px; height: 2px;
+  background: var(--orange);
+  display: inline-block;
+}
+.mission-quote {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: var(--cream);
+  max-width: 980px;
+}
+.mission-quote em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--yellow);
+}
+.mission-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+  align-items: center;
+}
+.mission-tags span {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(250, 241, 216, 0.1);
+  border: 1px solid rgba(250, 241, 216, 0.18);
+  color: var(--cream);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.mission-tags .tag-dot {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--orange-soft);
+  font-size: 1rem;
+}
+
+/* Pillar grid — four columns variant */
+.pillar-grid--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+.pillar-4 {
+  background: var(--orange-deep);
+  color: var(--cream);
+  border-color: transparent;
+}
+
+/* ============================================================
+   INITIATIVES (Clothes + Travel)
+   ============================================================ */
+.initiatives {
+  padding: 60px 0 40px;
+}
+.initiatives-intro {
+  margin: 18px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 600px;
+}
+
+.initiative-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.initiative {
+  position: relative;
+  background: var(--cream);
+  border: 1px solid var(--paper-line);
+  border-radius: 22px;
+  padding: 40px 36px 34px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(15, 32, 26, 0.04), 0 18px 40px -16px rgba(15, 32, 26, 0.15);
+}
+.initiative:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(15, 32, 26, 0.06), 0 28px 50px -16px rgba(15, 32, 26, 0.22);
+}
+
+.initiative-clothes { background: linear-gradient(135deg, #fff 0%, #FAF1D8 100%); }
+.initiative-travel  { background: linear-gradient(135deg, #fff 0%, #FAF1D8 100%); }
+
+.initiative-art {
+  align-self: flex-start;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--green-ink);
+  color: var(--orange);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.initiative-travel .initiative-art {
+  background: var(--orange);
+  color: var(--cream);
+}
+.init-icon { width: 36px; height: 36px; }
+
+.initiative-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+.initiative h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.initiative p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  margin: 0 0 22px;
+}
+
+.initiative-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 8px;
+}
+.initiative-points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.initiative-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px;
+  width: 12px; height: 2px;
+  background: var(--orange);
+}
+
+.initiative .btn { align-self: flex-start; margin-top: auto; }
+
+/* ============================================================
    PROJECTS
    ============================================================ */
 .projects {
@@ -1269,6 +1481,9 @@ a   { color: inherit; }
   border: 3px solid #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
+.brand-pin--hq { width: 22px; height: 22px; }
+.brand-pin--hq .brand-pin__core { border-width: 2px; }
+.brand-pin--hq .brand-pin__pulse { inset: -3px; }
 .brand-pin__core::after {
   content: '';
   position: absolute;
@@ -1395,6 +1610,20 @@ a   { color: inherit; }
     gap: 20px;
     margin-bottom: 36px;
   }
+
+  /* Mission card */
+  .mission-section { padding: 48px 0 0; }
+  .mission-card-inner { padding: 40px 30px 38px; }
+  .mission-quote { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+  .mission-tags { margin-top: 26px; }
+  .mission-tags span { font-size: 0.7rem; padding: 6px 13px; }
+
+  /* Initiatives — stack on tablet */
+  .initiative-grid { grid-template-columns: 1fr; gap: 20px; }
+  .initiative { padding: 32px 26px 28px; }
+
+  /* Pillar four-grid → two columns on tablet */
+  .pillar-grid--four { grid-template-columns: repeat(2, 1fr); }
 
   /* Pillars — single column, tamer padding */
   .pillars { padding: 48px 0 24px; }
@@ -1564,6 +1793,26 @@ a   { color: inherit; }
   .reach-list li { padding: 10px 14px; font-size: 0.94rem; }
   .map-popup strong { font-size: 1.2rem; }
   .map-popup p { font-size: 0.82rem; }
+
+  /* Mission card — mobile */
+  .mission-section { padding: 32px 0 0; }
+  .mission-card { border-radius: 22px; }
+  .mission-card-inner { padding: 30px 22px 28px; }
+  .mission-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; margin-bottom: 20px; }
+  .mission-quote { font-size: clamp(1.15rem, 5vw, 1.5rem); line-height: 1.35; }
+  .mission-tags { gap: 8px; margin-top: 22px; }
+  .mission-tags span { font-size: 0.66rem; padding: 5px 11px; }
+
+  /* Pillar four-grid → single column on mobile */
+  .pillar-grid--four { grid-template-columns: 1fr; }
+
+  /* Initiatives — mobile */
+  .initiatives { padding: 40px 0 20px; }
+  .initiative { padding: 26px 22px 22px; border-radius: 18px; }
+  .initiative-art { width: 50px; height: 50px; border-radius: 12px; margin-bottom: 18px; }
+  .init-icon { width: 30px; height: 30px; }
+  .initiative h3 { font-size: 1.75rem; }
+  .initiative .btn { width: 100%; }
 
   /* Projects — mobile */
   .projects { padding: 40px 0 24px; }

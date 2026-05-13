@@ -127,43 +127,19 @@ setInterval(updateCountdown, 1000);
   const el = document.getElementById('ugandaMap');
   if (!el || typeof L === 'undefined') return;
 
-  const districts = [
-    {
-      name:   'Kampala',
-      role:   'HQ & Slums Outreach',
-      blurb:  'Studio HQ where kits are designed and assembled, plus active outreach in Kampala\'s informal settlements.',
-      latlng: [0.3476, 32.5825],
-      color:  getCssVar('--orange', '#F58220'),
-    },
-    {
-      name:   'Bugiri',
-      role:   'Eastern Uganda',
-      blurb:  'Distribution and partner-school programs serving Bugiri district and surrounding communities in eastern Uganda.',
-      latlng: [0.5708, 33.7414],
-      color:  getCssVar('--green', '#3DA52E'),
-    },
-    {
-      name:   'Mayuge',
-      role:   'Eastern Uganda',
-      blurb:  'Outreach and dignity-kit distribution across schools and community centres in Mayuge district.',
-      latlng: [0.4569, 33.4742],
-      color:  getCssVar('--yellow', '#FFCE3A'),
-    },
-  ];
-
   const map = L.map(el, {
     center:          [1.55, 32.3],
     zoom:            7,
     minZoom:         6,
-    maxZoom:         12,
-    scrollWheelZoom: false,          // don't hijack page scroll
+    maxZoom:         10,
+    scrollWheelZoom: false,
     zoomControl:     true,
     attributionControl: true,
     maxBounds:       [[-2.5, 28], [5.5, 36.5]],
     maxBoundsViscosity: 0.8,
   });
 
-  // Clean, minimal light tiles — lets the brand markers stand out
+  // Clean light tiles — lets the highlighted country fill stand out
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> ' +
@@ -172,8 +148,7 @@ setInterval(updateCountdown, 1000);
     maxZoom:    19,
   }).addTo(map);
 
-  // Highlight Uganda outline with a soft halo (drawn as a wide polyline ring)
-  // We use a simplified Uganda border. Coords approximate; for the visual halo only.
+  // Simplified Uganda border (approximate, for visual highlight only)
   const ugandaBorder = [
     [4.21, 30.85], [4.20, 33.83], [3.42, 34.18], [3.04, 34.62], [2.20, 34.95],
     [1.50, 35.00], [1.06, 34.86], [0.65, 34.74], [-0.04, 34.07], [-0.95, 33.90],
@@ -182,48 +157,43 @@ setInterval(updateCountdown, 1000);
     [4.21, 30.85]
   ];
 
+  // PROMINENT highlight of the whole country — we operate nationwide
   L.polygon(ugandaBorder, {
     color:       getCssVar('--green-deep', '#1F6B16'),
-    weight:      2.5,
-    opacity:     0.9,
+    weight:      3,
+    opacity:     1,
     fillColor:   getCssVar('--orange', '#F58220'),
-    fillOpacity: 0.04,
+    fillOpacity: 0.22,
     interactive: false,
+    className:   'uganda-fill',
   }).addTo(map);
 
-  // Brand-styled markers
-  districts.forEach(d => {
-    const html = `
-      <div class="brand-pin" style="--c:${d.color}">
+  // Subtle pulsing dot at Kampala just for HQ context (no district pins)
+  const hqIcon = L.divIcon({
+    className: 'brand-pin-wrap',
+    html: `
+      <div class="brand-pin brand-pin--hq" style="--c:${getCssVar('--ink', '#11221A')}">
         <span class="brand-pin__pulse"></span>
         <span class="brand-pin__core"></span>
-      </div>`;
-
-    const icon = L.divIcon({
-      className: 'brand-pin-wrap',
-      html,
-      iconSize:   [28, 28],
-      iconAnchor: [14, 14],
-    });
-
-    const marker = L.marker(d.latlng, { icon, riseOnHover: true }).addTo(map);
-
-    marker.bindPopup(`
-      <div class="map-popup" style="--c:${d.color}">
-        <span class="map-popup__tag">${d.role}</span>
-        <strong>${d.name}</strong>
-        <p>${d.blurb}</p>
-      </div>
-    `, {
-      closeButton: false,
-      offset:      [0, -8],
-      maxWidth:    260,
-    });
-
-    marker.on('mouseover', () => marker.openPopup());
+      </div>`,
+    iconSize:   [22, 22],
+    iconAnchor: [11, 11],
   });
 
-  // Open the Kampala popup by default once the map renders
+  const hq = L.marker([0.3476, 32.5825], { icon: hqIcon, riseOnHover: true }).addTo(map);
+  hq.bindPopup(`
+    <div class="map-popup" style="--c:${getCssVar('--orange', '#F58220')}">
+      <span class="map-popup__tag">Headquarters</span>
+      <strong>Kampala, Uganda</strong>
+      <p>Itendo Foundation is headquartered here, but our work reaches communities right across Uganda.</p>
+    </div>
+  `, {
+    closeButton: false,
+    offset:      [0, -6],
+    maxWidth:    260,
+  });
+  hq.on('mouseover', () => hq.openPopup());
+
   setTimeout(() => map.invalidateSize(), 100);
 })();
 
