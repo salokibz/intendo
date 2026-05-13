@@ -12,3 +12,6 @@ desktop.ini
 # Local env
 .env
 .env.local
+
+# Local build artifacts (Truehost deploy bundle)
+itendo-deploy.zip
